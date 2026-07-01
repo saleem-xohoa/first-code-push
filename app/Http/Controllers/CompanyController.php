@@ -1,24 +1,17 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // $users = user::with('post')->get();
-        // return $users;
-
-        $users = user::with('company')->with('phoneNumber')->get();
-        return $users;
-
-        // $user = user::find(1);
-        // return $user->roles;
+        //
     }
 
     /**
@@ -26,9 +19,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        // $user  = User::findOrFail(3);
-        // $roles = [1,4];
-        // $user->roles()->sync($roles);
+        //
     }
 
     /**
@@ -42,7 +33,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +41,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(string $id)
     {
         //
     }
@@ -58,7 +49,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -66,7 +57,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(string $id)
     {
         //
     }

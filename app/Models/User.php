@@ -21,4 +21,12 @@ class User extends Model
     {
         return $this->belongsToMany(Role::class, 'user_role');
     }
+    public function company()
+    {
+        return $this->hasMany(Company::class);
+    }
+    public function phoneNumber()
+    {
+        return $this->hasOneThrough(PhoneNumber::class, Company::class);
+    }
 }

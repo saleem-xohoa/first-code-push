@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PostController;
@@ -45,3 +46,4 @@ Route::get('/post', [PostController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index']);
 Route::resource('user', UserController::class);
 Route::resource('role', RoleController::class);
+Route::resource('company', CompanyController::class);
