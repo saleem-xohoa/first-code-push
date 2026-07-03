@@ -2,18 +2,21 @@
 
 namespace Database\Seeders;
 
+use App\Models\Company;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class companyseeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $this->call([
-            userseeder::class,
+        Company::create([
+            'id' => 4,
+            'compmany_name' => 'United',
+            'user_id' => 4,
         ]);
     }
 }

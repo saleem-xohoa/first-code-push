@@ -7,7 +7,7 @@ class RoleController extends Controller
 {
     public function index()
     {
-        $role = Role::find(2);
+        $role = Role::find(4);
         return $role->users;
     }
 }

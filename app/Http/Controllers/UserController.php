@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,13 +12,20 @@ class UserController extends Controller
      */
     public function index()
     {
-        // $users = user::with('post')->get();
+        /**
+     * one to many.
+     */
+        // $users = User::with('post')->get();
         // return $users;
-
-        $users = user::with('company')->with('phoneNumber')->get();
+          /**
+     * Has one through.
+     */
+        $users = User::with('company')->with('phoneNumber')->get();
         return $users;
-
-        // $user = user::find(1);
+          /**
+     * Many to many.
+     */
+        // $user = User::with('roles')->find(1);
         // return $user->roles;
     }
 
@@ -26,8 +34,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        // $user  = User::findOrFail(3);
-        // $roles = [1,4];
+        // $user  = User::find(4);
+        // $roles = [1, 2, 3]; // Array of role IDs to assign to the user
         // $user->roles()->sync($roles);
     }
 

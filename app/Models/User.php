@@ -12,21 +12,21 @@ class User extends Model
         'password',
     ];
 
-    public function post()
-    {
-        return $this->hasMany(Post::class);
-    }
+    // public function post()
+    // {
+    //     return $this->hasMany(Post::class);
+    // }
 
     public function roles()
     {
         return $this->belongsToMany(Role::class, 'user_role');
     }
-    public function company()
-    {
-        return $this->hasMany(Company::class);
-    }
-    public function phoneNumber()
-    {
-        return $this->hasOneThrough(PhoneNumber::class, Company::class);
-    }
+    // public function company()
+    // {
+    //     return $this->hasOne(Company::class);
+    // }
+    // public function phoneNumber()
+    // {
+    //     return $this->hasOneThrough(PhoneNumber::class, Company::class);
+    // }
 }

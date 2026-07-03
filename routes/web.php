@@ -27,7 +27,7 @@ Route::get('/products/create', [ProductController::class, 'create'])
 Route::post('/products/store', [ProductController::class, 'store'])
     ->name('products.store');
 
-Route::get('/products/edit/{id}', [ProductController::class, 'edit'])
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])
     ->name('products.edit');
 
 Route::put('/products/{product}', [ProductController::class, 'update'])
@@ -36,8 +36,7 @@ Route::put('/products/{product}', [ProductController::class, 'update'])
 Route::delete('/products/{id}', [ProductController::class, 'destroy'])
     ->name('products.destroy');
 
-Route::get('/products/{product}', [ProductController::class, 'show'])
-    ->name('products.show');
+
 Route::get('/products-data', [ProductController::class, 'productdata']);
 Route::get('/student', [StudentController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
