@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReporterController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
@@ -46,3 +49,6 @@ Route::get('/role', [RoleController::class, 'index']);
 Route::resource('user', UserController::class);
 Route::resource('role', RoleController::class);
 Route::resource('company', CompanyController::class);
+Route::resource('country', CountryController::class);
+Route::resource('reporter', ReporterController::class);
+Route::resource('article', ArticleController::class);

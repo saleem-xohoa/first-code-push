@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            userseeder::class,
-        ]);
+     // depends on country
+    articleseeder::class,   // depends on reporter
+    // other seeders...
+]);
     }
 }
