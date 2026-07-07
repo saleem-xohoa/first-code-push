@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,18 +12,23 @@ class UserController extends Controller
     public function index()
     {
         /**
-     * one to many.
-     */
+         * Polymorphic.
+         */
+        $users = User::find(1);
+        return $users->image;
+        /**
+         * one to many.
+         */
         // $users = User::with('post')->get();
         // return $users;
-          /**
-     * Has one through.
-     */
-        $users = User::with('company')->with('phoneNumber')->get();
-        return $users;
-          /**
-     * Many to many.
-     */
+        /**
+         * Has one through.
+         */
+        // $users = User::with('company')->with('phoneNumber')->get();
+        // return $users;
+        /**
+         * Many to many.
+         */
         // $user = User::with('roles')->find(1);
         // return $user->roles;
     }
@@ -33,10 +37,19 @@ class UserController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
+    {/**
+     * Many to many.
+     */
         // $user  = User::find(4);
         // $roles = [1, 2, 3]; // Array of role IDs to assign to the user
         // $user->roles()->sync($roles);
+        /**
+         * Polymorphic.
+         */
+        $user = User::find(3);
+        $user->image()->create([
+            'url' => 'images/user2.jpeg',
+        ]);
     }
 
     /**
