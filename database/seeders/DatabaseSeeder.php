@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
      // depends on country
-    userseeder::class,   // depends on reporter
+    tagseeder::class,   // depends on reporter
     // other seeders...
 ]);
     }

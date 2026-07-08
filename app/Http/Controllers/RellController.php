@@ -12,8 +12,24 @@ class RellController extends Controller
      */
     public function index()
     {
-        $rell = Rell::find(2);
-        return $rell->image;
+          /**
+     * one to one polymorphic
+     */
+        // $rell = Rell::find(2);
+        // return $rell->image;
+
+          /**
+     * one to many polymorphic
+     */
+        // $rell = Rell::with('comments')->find(1);
+        // return $rell;
+
+             /**
+     * Many to many polymorphic
+     */
+        $rell = Rell::with('tags')->find(1);
+        return $rell;
+
     }
 
     /**
@@ -21,13 +37,35 @@ class RellController extends Controller
      */
     public function create()
     {
-        $rell = Rell::create([
-          'heading' => "hamza",
-          'description' => " dummy text of the printing and typesetting industry. "
-        ]);
-        $rell->image()->create([
-            'url' => 'images/post1.jpeg'
-        ]);
+        /**
+     * one to one polymorphic
+     */
+        // $rell = Rell::create([
+        //   'heading' => "hamza",
+        //   'description' => " dummy text of the printing and typesetting industry. "
+        // ]);
+        // $rell->image()->create([
+        //     'url' => 'images/post1.jpeg'
+        // ]);
+        /**
+     * one to many polymorphic
+     */
+        // $rell = Rell::find(5);
+        // $rell->comments()->create([
+        //     'detail' => 'Great '
+        // ]);
+
+         /**
+     * Many to many polymorphic
+     */
+
+         $rell = Rell::create([
+            "heading" => "lorem",
+            "description" => "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece "
+         ]);
+         $rell->tags()->create([
+            "name" => "lorem ipsum",
+         ]);
     }
 
     /**
